@@ -9,8 +9,6 @@ It turns raw documents into structured, source-grounded artifacts and supports m
 **Core idea:**  
 **Prepare data once. Investigate many times. Compare runs deliberately.**
 
----
-
 ## System model
 
 OpenInvestigator separates three layers:
@@ -47,8 +45,6 @@ Runs of the same case can be compared to reveal:
 
 This is a core product feature, not an add-on.
 
----
-
 ## MVP scope
 
 The MVP should be able to:
@@ -67,8 +63,6 @@ The MVP should be able to:
 8. compare multiple runs of the same case
 9. reproduce runs from stored inputs and configuration
 
----
-
 ## Non-goals
 
 The MVP is not:
@@ -79,8 +73,6 @@ The MVP is not:
 - a multi-tenant enterprise platform
 - a UI-first product
 - an OCR product by itself
-
----
 
 ## Architecture principles
 
@@ -101,8 +93,6 @@ Persistent case knowledge and run-specific interpretation must remain separate.
 
 ### Reproducibility is a feature
 Runs must be recreatable from stored inputs, configuration, and model metadata.
-
----
 
 ## High-level flow
 
@@ -151,8 +141,6 @@ Runs must be recreatable from stored inputs, configuration, and model metadata.
 * **Hypothesis** — source-grounded explanatory scenario
 * **ReportArtifact** — exported run output
 
----
-
 ## Critical data boundary
 
 The most important schema rule is:
@@ -162,8 +150,6 @@ The most important schema rule is:
 
 This separation is essential for trust, comparison, and reproducibility.
 
----
-
 ## Provenance model
 
 Every important artifact should be traceable through this chain:
@@ -171,8 +157,6 @@ Every important artifact should be traceable through this chain:
 **Hypothesis -> Claim/Event -> Chunk -> SourceDocument**
 
 Outputs without source grounding should not be treated as trustworthy.
-
----
 
 ## Investigation runs
 
@@ -197,8 +181,6 @@ Each run should be:
 * traceable
 * reproducible
 * comparable
-
----
 
 ## Reporting
 
@@ -225,8 +207,6 @@ Comparison reports should highlight:
 * differing assumptions
 * profile-driven differences
 
----
-
 ## Technical baseline
 
 Recommended stack:
@@ -240,8 +220,6 @@ Recommended stack:
 * Alembic
 * pytest
 
----
-
 ## Security baseline
 
 Minimum controls:
@@ -253,8 +231,6 @@ Minimum controls:
 * explicit local-only vs cloud-enabled mode
 
 Treat document content as untrusted input.
-
----
 
 ## Summary
 
